@@ -10,7 +10,8 @@ gem 'pry'
 gem 'puma'
 gem 'rails'
 gem 'sidekiq'
-gem  "bunny"
+gem  'bunny'
+
 group :development do
   gem 'dotenv-rails'
   gem 'rspec-rails'
