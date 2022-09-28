@@ -7,6 +7,7 @@ gem 'bootsnap'
 gem 'rails'
 gem  'bunny'
 gem 'sqlite3'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :development do
   gem 'spring'

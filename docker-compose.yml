@@ -31,6 +31,8 @@ services:
     ports:
       - '3035:3035'
       - '5000:5000'
+    depends_on:
+      - rabbitmq
 
 volumes:
   bundle_path:

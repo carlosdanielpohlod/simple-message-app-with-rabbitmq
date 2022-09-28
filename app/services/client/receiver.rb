@@ -8,8 +8,4 @@ class Client::Receiver < Client::Base
       puts "📢 Received '#{payload}'"
     end
   end
-
-  private
-
-  attr_accessor :queue, :channel
 end
