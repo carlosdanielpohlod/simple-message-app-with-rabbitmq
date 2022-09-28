@@ -14,3 +14,7 @@ group :development do
   gem 'spring-watcher-listen'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
