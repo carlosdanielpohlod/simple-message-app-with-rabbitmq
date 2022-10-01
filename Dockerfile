@@ -10,6 +10,11 @@ RUN apt-get update && apt-get install -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# ADD an user
+RUN adduser --disabled-password --gecos '' devel \
+  && usermod -a -G sudo devel \
+  && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
+  && echo 'devel:devel' | chpasswd
 
 ENV HOME=/home/devel
 ENV APP=/var/www/app

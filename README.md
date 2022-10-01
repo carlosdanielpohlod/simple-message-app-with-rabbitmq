@@ -10,7 +10,7 @@ Requirements:
 
 To install and run the containers execute them in your terminal:
 
-`$ docker build` and `$ docker-compose up`
+`$ docker-compose build` and `$ docker-compose up`
 
 and now you have executed a container with ruby and another one with RabbitMQ service.
 
