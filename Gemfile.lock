@@ -73,6 +73,8 @@ GEM
     bunny (2.19.0)
       amq-protocol (~> 2.3, >= 2.3.1)
       sorted_set (~> 1, >= 1.0.2)
+    bunny-mock (1.7.0)
+      bunny (>= 1.7)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     diff-lcs (1.5.0)
@@ -194,6 +196,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bunny
+  bunny-mock
   dotenv-rails
   rails
   rspec-rails

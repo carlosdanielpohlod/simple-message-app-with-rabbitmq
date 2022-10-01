@@ -1,24 +1,27 @@
-# README
+## Presentation
+<p>
+Hello, this is a simple app to present the RabbitMQ with Ruby on Rails. With then you can create producers and consumers, and send messages in a queue to be consumed.
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Setup
+Requirements:
 
-Things you may want to cover:
+- Docker and Docker compose
 
-* Ruby version
+To install and run the containers execute them in your terminal:
 
-* System dependencies
+`$ docker build` and `$ docker-compose up`
 
-* Configuration
+and now you have executed a container with ruby and another one with RabbitMQ service.
 
-* Database creation
+##Use
 
-* Database initialization
+➡️ To open the container with ruby bash you can use `docker exec -it CONTAINER_NAME bash`. After open the container bash, you can open an Rails console instance and than use the app classes/methods.
 
-* How to run the test suite
+➡️ To open an rails console: `./bin/rails c`
 
-* Services (job queues, cache servers, search engines, etc.)
+➡️ To send a message to the queue you can execute it in a rails console:
+`Client::Publisher.new.publish_message 'hey' `
 
-* Deployment instructions
-
-* ...
+➡️ To listen to the messages you can execute them in another Rails console instance:
+	`Client::Receiver.new.listen_messages`
