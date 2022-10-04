@@ -1,4 +1,3 @@
-
 class Client::Receiver < Client::Base
   
   def listen_messages

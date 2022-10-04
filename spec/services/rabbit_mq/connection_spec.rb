@@ -3,21 +3,50 @@ require 'rails_helper'
 RSpec.describe RabbitMq::Connection, type: :service do
   bunny_instance = BunnyMock.new
   
-
   before do
     allow(Bunny)
       .to receive(:new)
       .and_return(bunny_instance)
   end
 
-  it '#connection' do
-    expect(described_class.new.connection.class).to eq(bunny_instance.class)
+  describe '#connection' do
+    it 'have an Bunny connection instance' do
+      expect(described_class.new.connection.class).to eq(bunny_instance.class)
+    end
   end
 
-  # it '#channel' do
-  #   bunny_with_channel = bunny_instance.start.channel
+  describe '#channel' do
+    it 'has an Bunny channel instance' do
+      instance_with_channel = described_class.new.start.channel
+      bunny_with_channel = bunny_instance.start.channel
 
-  #   expect(described_class.new.channel)
-  #     .to eq(bunny_with_channel)
-  # end
+      expect(instance_with_channel.class).to eq(bunny_with_channel.class)
+    end
+  end
+
+  describe '.create_channel' do
+    it 'return an bunny channel instance' do
+      result = described_class.new.create_channel
+
+      expect(result.class).to eq(BunnyMock::Channel)
+    end
+  end
+
+  describe '.close' do
+    it 'close an bunny connection' do
+      result = described_class.new
+      result.close
+
+      expect(result.connection.status).to eq(:closed)
+    end
+  end
+
+  describe '.start' do
+    it 'start an bunny connection' do
+      result = described_class.new
+      result.start
+
+      expect(result.connection.status).to eq(:connected)
+    end
+  end
 end 
