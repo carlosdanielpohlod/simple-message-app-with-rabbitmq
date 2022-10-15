@@ -1,9 +1,9 @@
-class Client::Base
+class RabbitMq::Client::Base
   attr_reader :queue, :channel
 
   def initialize
     @channel = connection.channel
-    @queue = @channel.queue(ENV['ROUTING_KEY'], durable: true)
+    @queue = @channel.queue(ENV['DEFAULT_ROUTING_KEY'], durable: true)
   end
 
   private
