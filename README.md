@@ -3,7 +3,7 @@
 
 <p>
 
-Hello, this is a simple app to present RabbitMQ with Ruby on Rails. With then you can create producers and consumers, and send messages in a queue to be consumed.
+Hello, this is a simple app to present RabbitMQ with Ruby on Rails. With then you can create producers and consumers, and send messages in a queue to be consumed. This repository is used into https://blog.codeminer42.com/event-driven-architecture-2-our-first-app-with-rabbitmq/
 
 </p>
 
